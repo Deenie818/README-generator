@@ -1,11 +1,11 @@
 // Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require('fs');
-const util = require('util');
 
-const generateMarkdown = require('.util/generateMarkdown');
 
-// TODO: Array of questions for user input
+const generateMarkdown = require('./util/generateMarkdown');
+
+// Array of questions for user input
 const questions = [{
     type: 'input',
     message: 'What is the title of this project?',
@@ -34,14 +34,14 @@ const questions = [{
 {
     type: 'checkbox',
     message: 'Which license is being used?',
-    choices: ['MIT','Mozilla Public License', 'Boost Software License 1.0', 'Apache License 2.0' ],
+    choices: ['MIT', 'Mozilla Public License', 'Boost Software License 1.0', 'Apache License 2.0'],
     name: 'License'
 },
 {
     type: 'input',
     message: 'What does the user need to know about how to contribute to this project?',
     name: 'Contribution'
-}
+},
 {
     type: 'input',
     message: 'What command should be used to run tests?',
@@ -69,13 +69,13 @@ const questions = [{
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function(err) {
+    fs.writeFile(fileName, data, function (err) {
         console.log(fileName)
         console.log(data)
         if (err) {
             return console.log(err)
 
-        }else{
+        } else {
             console.log("Success!")
         }
     })
@@ -85,14 +85,17 @@ function writeToFile(fileName, data) {
 // function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(function(data) {
-        writeToFile("README.md", generateMarkdown(data));
-        console.log(data)
-    })
+        .then(function (response) {
+            writeToFile("README.md", generateMarkdown(response));
+            console.log(response)
+        })
 }
 
 // Function call to initialize app
 init();
+
+//exports
+
 
 
 // GIVEN a command-line application that accepts user input
