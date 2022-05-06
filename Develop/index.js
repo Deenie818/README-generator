@@ -18,11 +18,6 @@ const questions = [{
 },
 {
     type: 'input',
-    message: 'Table of Contents',
-    name: 'Table of Contents'
-},
-{
-    type: 'input',
     message: 'What is the installation process?',
     name: 'Installation'
 },
@@ -32,9 +27,9 @@ const questions = [{
     name: 'Usage'
 },
 {
-    type: 'checkbox',
+    type: 'list',
     message: 'Which license is being used?',
-    choices: ['MIT', 'Mozilla Public License', 'Boost Software License 1.0', 'Apache License 2.0'],
+    choices: ['MIT', 'Mozilla Public License', 'Boost Software License 1.0', 'Apache_2.0'],
     name: 'License'
 },
 {
@@ -50,7 +45,8 @@ const questions = [{
 {
     type: 'input',
     message: 'Please enter your Github username',
-    name: 'Github username'
+    name: 'Github',
+    default: 'Deenie818'
 },
 {
     type: 'input',
@@ -60,7 +56,7 @@ const questions = [{
 {
     type: 'input',
     message: 'Please enter your contact information.',
-    name: 'Additional Questions'
+    name: 'Additional'
 },
 
 ]
