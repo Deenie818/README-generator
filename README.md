@@ -24,3 +24,5 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 
 ![image](https://user-images.githubusercontent.com/99102981/167237448-89dd7f9c-2059-4180-8060-bab1f88fdd23.png)
+
+ Walk-through video: https://drive.google.com/file/d/1UB5wiw7YHlPyqSBG9oXVgmfcWDy5nAEp/view
